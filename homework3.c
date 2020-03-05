@@ -64,14 +64,91 @@ void initBoard()
 // Since count is an unsigned integer, you can mask the value in some way.
 void changeLaunchpadLED2(unsigned int count)
 {
-
+    switch (count)
+    {
+    case 0:
+        turnOn_LaunchpadLED2Red();
+        count++;
+        break;
+    case 1:
+        turnOff_LaunchpadLED2Red();
+        turnOn_LaunchpadLED2Green();
+        count++;
+        break;
+    case 2:
+        turnOn_LaunchpadLED2Red();
+        turnOn_LaunchpadLED2Green();
+        count++;
+        break;
+    case 3:
+        turnOff_LaunchpadLED2Red();
+        turnOff_LaunchpadLED2Green();
+        turnOn_LaunchpadLED2Blue();
+        count++;
+        break;
+    case 4:
+        turnOn_LaunchpadLED2Red();
+        count++;
+        break;
+    case 5:
+        turnOff_LaunchpadLED2Red();
+        turnOn_LaunchpadLED2Blue();
+        turnOn_LaunchpadLED2Green();
+        count++;
+        break;
+    case 6:
+        turnOn_LaunchpadLED2Red();
+        count++;
+        break;
+    default:
+        turnOff_LaunchpadLED2Red();
+        turnOff_LaunchpadLED2Blue();
+        turnOff_LaunchpadLED2Green();
+        count = 0;
+        break;
+     count++;
+    }
 }
 
 // TODO: Maybe the value of a count variable to a color for the Boosterpack LED
 // This is essentially a copy of the previous function, using a different LED
 void changeBoosterpackLED(unsigned int count)
 {
-
+    switch (count)
+        {
+        case 0:
+            turnOn_BoosterpackLEDRed();
+            break;
+        case 1:
+            turnOff_BoosterpackLEDRed();
+            turnOn_BoosterpackLEDGreen();
+            break;
+        case 2:
+            turnOn_BoosterpackLEDRed();
+            turnOn_BoosterpackLEDGreen();
+            break;
+        case 3:
+            turnOff_BoosterpackLEDRed();
+            turnOff_BoosterpackLEDGreen();
+            turnOn_BoosterpackLEDBlue();
+            break;
+        case 4:
+            turnOn_BoosterpackLEDRed();
+            break;
+        case 5:
+            turnOff_BoosterpackLEDRed();
+            turnOn_BoosterpackLEDBlue();
+            turnOn_BoosterpackLEDGreen();
+            break;
+        case 6:
+            turnOn_BoosterpackLEDRed();
+            break;
+        case 7:
+            turnOff_BoosterpackLEDRed();
+            turnOff_BoosterpackLEDBlue();
+            turnOff_BoosterpackLEDGreen();
+            break;
+        }
 }
 
 // TODO: Create a button state machine.
