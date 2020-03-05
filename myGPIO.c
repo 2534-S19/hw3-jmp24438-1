@@ -29,18 +29,20 @@ void initGPIO()
     // Launchpad S1
     P1DIR &= ~LPad_Left;
     P1REN |= LPad_Left;
-
+    P1OUT |= LPad_Left;
     // Launchpad S2
     P1DIR &= ~LPad_Right;
     P1REN |= LPad_Right;
+    P1OUT |= LPad_Right;
 
     // Boosterpack S1
     P3DIR &= ~Booster_1;
     P3REN |= Booster_1;
-
+    P3OUT |= Booster_1;
     // Boosterpack S2
     P3DIR &= ~Booster_2;
     P3REN |= Booster_2;
+    P3OUT |= Booster_2;
 
     // Launchpad LED1
     P1DIR |= LeftLED;
